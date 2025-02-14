@@ -8,80 +8,60 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #000000; /* Fondo negro */
-            color: #ffffff; /* Texto blanco */
+            background-color: #000000;
+            color: #ffffff;
             margin: 0;
             padding: 20px;
             position: relative;
             overflow: hidden;
         }
         h1 {
-            font-size: 3rem;
-            margin-top: 50px;
-            color: #ff4d4d; /* Rojo claro */
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #ff4d4d;
         }
         .dedicatoria {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 20px 0;
-            color: #ffd700; /* Dorado */
+            color: #ffd700;
         }
         .imagen-centrada {
-            display: inline-block;
-            max-width: 100px; /* 10 centímetros */
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
-            margin: 10px;
+            margin: 10px 0;
         }
         .imagen-colage {
-            max-width: 100px; /* 10 centímetros */
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
-            position: absolute;
+            margin: 10px 0;
         }
         .gifs {
-            position: absolute;
-            width: 100px;
+            width: 80px;
             height: auto;
-        }
-        .gif-top-left {
-            top: 10px;
-            left: 10px;
-        }
-        .gif-top-right {
-            top: 10px;
-            right: 10px;
-        }
-        .gif-bottom-left {
-            bottom: 10px;
-            left: 10px;
-        }
-        .gif-bottom-right {
-            bottom: 10px;
-            right: 10px;
+            margin: 10px;
         }
         .botones {
             margin: 20px 0;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         button {
-            background-color: #800080; /* Morado */
+            background-color: #800080;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
-            margin: 0 10px;
+            font-size: 1rem;
             cursor: pointer;
-            position: absolute;
         }
         button:hover {
-            background-color: #ff00ff; /* Rosa */
-        }
-        #btnSi {
-            position: static; /* El botón "Sí" se mantiene en su lugar */
+            background-color: #ff00ff;
         }
         #btnNo {
-            transition: all 0.5s ease; /* Animación suave al moverse */
+            transition: all 0.5s ease;
         }
         .corazon-contenedor {
             display: flex;
@@ -90,38 +70,16 @@
             margin: 20px 0;
         }
         .corazon, .ramo {
-            font-size: 5rem;
-            position: relative;
-        }
-        .corazon::before, .ramo::before {
-            content: '❤️';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: white;
-            animation: tejer 5s linear infinite;
-        }
-        .ramo::before {
-            content: '💐'; /* Ramo de flores */
-        }
-        @keyframes tejer {
-            0% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); color: white; } /* Blanco */
-            25% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); color: #00ff00; } /* Verde */
-            50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); color: #ffd700; } /* Dorado */
-            75% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); color: #800080; } /* Morado */
-            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); color: #ff0000; } /* Rojo */
+            font-size: 3rem;
         }
         .mensaje {
             text-align: justify;
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
-            position: relative;
         }
         .corazones-lluvia {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -131,13 +89,35 @@
         }
         .corazon-lluvia {
             position: absolute;
-            color: #ff4d4d; /* Rosa */
+            color: #ff4d4d;
             font-size: 20px;
-            animation: lluvia 10s linear infinite; /* Más lento */
+            animation: lluvia 10s linear infinite;
         }
         @keyframes lluvia {
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100vh); }
+        }
+
+        /* Media queries para móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .dedicatoria {
+                font-size: 1rem;
+            }
+            .gifs {
+                width: 50px;
+            }
+            .imagen-colage {
+                max-width: 80%;
+            }
+            .corazon, .ramo {
+                font-size: 2rem;
+            }
+            .mensaje {
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
@@ -146,7 +126,7 @@
         <h1>¿Quieres ser mi San Valentín?</h1>
         <p class="dedicatoria">Para el amor de mi vida, con todo el cariño y amor de mi corazón 💖.</p>
 
-        <!-- Imágenes 4, 1 y 5 en línea -->
+        <!-- Imágenes en línea -->
         <div>
             <img src="Imagenes/Imagen-4.jpg" class="imagen-centrada" alt="Imagen 4">
             <img src="Imagenes/Imagen-1.jpg" class="imagen-centrada" alt="Imagen 1">
@@ -161,18 +141,10 @@
         </div>
 
         <!-- Gifs en las esquinas -->
-        <img src="Imagenes/Gif-1.gif" class="gifs gif-top-left" alt="Gif 1">
-        <img src="Imagenes/Gif-2.gif" class="gifs gif-top-right" alt="Gif 2">
-        <img src="Imagenes/Gif-3.gif" class="gifs gif-bottom-left" alt="Gif 3">
-        <img src="Imagenes/Gif-4.gif" class="gifs gif-bottom-right" alt="Gif 4">
-
-        <!-- Imágenes distribuidas alrededor del mensaje -->
-        <img src="Imagenes/Imagen-2.jpg" class="imagen-colage" style="top: 20%; left: 5%;" alt="Imagen 2">
-        <img src="Imagenes/Imagen-3.jpg" class="imagen-colage" style="top: 20%; right: 5%;" alt="Imagen 3">
-        <img src="Imagenes/Imagen-6.jpg" class="imagen-colage" style="top: 50%; left: 10%;" alt="Imagen 6">
-        <img src="Imagenes/Imagen-7.jpg" class="imagen-colage" style="top: 50%; right: 10%;" alt="Imagen 7">
-        <img src="Imagenes/Imagen-8.jpg" class="imagen-colage" style="top: 80%; left: 15%;" alt="Imagen 8"> <!-- Ajustada -->
-        <img src="Imagenes/Imagen-9.jpg" class="imagen-colage" style="top: 80%; right: 15%;" alt="Imagen 9"> <!-- Ajustada -->
+        <img src="Imagenes/Gif-1.gif" class="gifs" style="position: absolute; top: 10px; left: 10px;" alt="Gif 1">
+        <img src="Imagenes/Gif-2.gif" class="gifs" style="position: absolute; top: 10px; right: 10px;" alt="Gif 2">
+        <img src="Imagenes/Gif-3.gif" class="gifs" style="position: absolute; bottom: 10px; left: 10px;" alt="Gif 3">
+        <img src="Imagenes/Gif-4.gif" class="gifs" style="position: absolute; bottom: 10px; right: 10px;" alt="Gif 4">
 
         <!-- Botones -->
         <div class="botones">
@@ -204,11 +176,10 @@
             const anchoVentana = window.innerWidth;
             const altoVentana = window.innerHeight;
 
-            // Generar posiciones aleatorias dentro de los límites de la ventana
+            // Limitar el movimiento para que no se salga de la pantalla
             const nuevaX = Math.random() * (anchoVentana - btnNo.offsetWidth);
             const nuevaY = Math.random() * (altoVentana - btnNo.offsetHeight);
 
-            // Aplicar las nuevas posiciones al botón
             btnNo.style.left = `${nuevaX}px`;
             btnNo.style.top = `${nuevaY}px`;
         }
@@ -221,12 +192,12 @@
         // Función para crear corazones de lluvia
         function crearCorazonesLluvia() {
             const corazonesLluvia = document.getElementById('corazonesLluvia');
-            for (let i = 0; i < 100; i++) { // Más corazones
+            for (let i = 0; i < 50; i++) {
                 const corazon = document.createElement('div');
                 corazon.className = 'corazon-lluvia';
                 corazon.innerHTML = '❤️';
                 corazon.style.left = `${Math.random() * 100}vw`;
-                corazon.style.animationDuration = `${Math.random() * 10 + 5}s`; // Más lento
+                corazon.style.animationDuration = `${Math.random() * 10 + 5}s`;
                 corazon.style.opacity = Math.random();
                 corazonesLluvia.appendChild(corazon);
             }
@@ -236,7 +207,6 @@
         function reproducirMusica() {
             const musica = document.getElementById('musica');
             musica.play().catch(() => {
-                // Si el navegador bloquea la reproducción automática, mostrar un mensaje
                 alert("Haz clic en la página para reproducir la música.");
                 document.body.addEventListener('click', () => musica.play());
             });
