@@ -144,7 +144,7 @@
 <body>
     <div class="container">
         <h1>¿Quieres ser mi San Valentín?</h1>
-        <p class="dedicatoria">Para [nombre de la persona], con todo mi cariño.</p>
+        <p class="dedicatoria">Para el amor de mi vida, con todo el cariño y amor de mi corazón 💖.</p>
 
         <!-- Imágenes 4, 1 y 5 en línea -->
         <div>
@@ -156,7 +156,7 @@
         <!-- Mensaje centrado y justificado -->
         <div class="mensaje">
             <p>
-                Este es un mensaje especial para ti. Quiero que sepas lo mucho que significas para mí y lo feliz que me haces cada día. Espero que esta pequeña página te guste tanto como a mí me gustas tú. 💖
+                Quiero que sepas que esto es la primer parte de tu regalo de San Valentín, aunque es algo pequeño, lo hice pensando en ti y en lo mucho que te amo. De verdad eres una persona increíble que no se cansa de llenarme de amor y cariño, todos los días doy gracias de poder compartir mi vida con alguien tan genial, bonita, linda, sexy y perfecta como lo eres tú 💖. Pero a todo esto, debo saber si realmente quieres ser mi San Valentín?💖 
             </p>
         </div>
 
@@ -209,8 +209,8 @@
             const nuevaY = Math.random() * (altoVentana - btnNo.offsetHeight);
 
             // Aplicar las nuevas posiciones al botón
-            btnNo.style.left = ${nuevaX}px;
-            btnNo.style.top = ${nuevaY}px;
+            btnNo.style.left = `${nuevaX}px`;
+            btnNo.style.top = `${nuevaY}px`;
         }
 
         // Función para mostrar la aceptación
@@ -225,8 +225,8 @@
                 const corazon = document.createElement('div');
                 corazon.className = 'corazon-lluvia';
                 corazon.innerHTML = '❤️';
-                corazon.style.left = ${Math.random() * 100}vw;
-                corazon.style.animationDuration = ${Math.random() * 10 + 5}s; // Más lento
+                corazon.style.left = `${Math.random() * 100}vw`;
+                corazon.style.animationDuration = `${Math.random() * 10 + 5}s`; // Más lento
                 corazon.style.opacity = Math.random();
                 corazonesLluvia.appendChild(corazon);
             }
