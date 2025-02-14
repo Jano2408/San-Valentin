@@ -47,7 +47,6 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            position: relative;
         }
         button {
             background-color: #800080;
@@ -62,7 +61,6 @@
             background-color: #ff00ff;
         }
         #btnNo {
-            position: static; /* Cambiamos a posición estática */
             transition: all 0.5s ease;
         }
         .corazon-contenedor {
@@ -119,16 +117,6 @@
             }
             .mensaje {
                 padding: 0 10px;
-                font-size: 0.9rem; /* Ajustamos el tamaño del texto */
-                text-align: left; /* Alineamos el texto a la izquierda */
-            }
-            .botones {
-                flex-direction: column; /* Botones en columna en móviles */
-                align-items: center;
-            }
-            button {
-                width: 80%; /* Botones más anchos en móviles */
-                margin: 5px 0;
             }
         }
     </style>
@@ -192,7 +180,6 @@
             const nuevaX = Math.random() * (anchoVentana - btnNo.offsetWidth);
             const nuevaY = Math.random() * (altoVentana - btnNo.offsetHeight);
 
-            btnNo.style.position = 'absolute';
             btnNo.style.left = `${nuevaX}px`;
             btnNo.style.top = `${nuevaY}px`;
         }
